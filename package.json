@@ -1,0 +1,12 @@
+{
+  "name": "inkads-brand-export",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "node generate-png.mjs"
+  },
+  "dependencies": {
+    "sharp": "^0.33.5",
+    "to-ico": "^1.1.5"
+  }
+}
