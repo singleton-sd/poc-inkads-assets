@@ -1,13 +1,39 @@
 {
-  "name": "inkads-brand-export",
+  "name": "@singleton-sd/inkads-assets",
+  "version": "0.1.0",
   "private": true,
+  "description": "InkAds brand SVG masters, favicons, and OG images. Primary delivery is GitHub Pages CDN.",
   "type": "module",
-  "scripts": {
-    "generate": "node generate-png.mjs"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/singleton-sd/poc-inkads-assets.git"
   },
+  "author": "Singleton SD",
+  "license": "MIT",
+  "scripts": {
+    "sync:legacy-svg": "node scripts/sync-legacy-svg.mjs",
+    "validate": "node scripts/validate-assets.mjs",
+    "test": "node --test scripts/validate-assets.test.mjs",
+    "build": "node scripts/build.mjs",
+    "generate": "npm run build"
+  },
+  "engines": {
+    "node": "22.x"
+  },
+  "files": [
+    "dist",
+    "src",
+    "meta.json",
+    "BRAND.md"
+  ],
   "dependencies": {
     "sharp": "^0.33.5",
     "to-ico": "^1.1.5"
   },
-  "description": "POC InkAds brand SVG/PNG export. CDN consume path: see README. Target npm: @singleton-sd/inkads-assets (#1)."
+  "keywords": [
+    "inkads",
+    "assets",
+    "favicon",
+    "brand"
+  ]
 }

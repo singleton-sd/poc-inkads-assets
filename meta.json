@@ -1,0 +1,28 @@
+{
+  "package": "@singleton-sd/inkads-assets",
+  "clearSpace": "mark-height",
+  "roles": ["lockup-horizontal", "lockup-stacked", "wordmark"],
+  "themes": ["light", "dark", "mono"],
+  "preferredVector": "svg",
+  "preferredRaster": "png",
+  "inventory": {
+    "mark": "src/logo/sources/",
+    "wordmark": "src/logo/wordmark/sources/{lockup-horizontal,lockup-stacked,wordmark}/",
+    "og": "src/og-image/{light,dark}/",
+    "email": "src/email/",
+    "documents": "src/documents/",
+    "illustrations": "src/illustrations/",
+    "screenshots": "src/screenshots/",
+    "marketing": "src/marketing/"
+  },
+  "legacySvgRoot": "svg/",
+  "colors": {
+    "yellowDark500": "#FFB300",
+    "yellowLight500": "#C89200",
+    "gray500": "#7F848A",
+    "gray300": "#C9CCD1",
+    "black": "#000000",
+    "white": "#FFFFFF"
+  },
+  "designSource": "InkAds Logo.dc.html — recommended system 3a (icon) + 3b (wordmark / horizontal lockup)"
+}
