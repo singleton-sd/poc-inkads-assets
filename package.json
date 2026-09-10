@@ -1,6 +1,6 @@
 {
   "name": "@singleton-sd/inkads-assets",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "InkAds brand SVG masters, favicons, and OG images. Primary delivery is GitHub Pages CDN; npm ships the versioned dist catalog.",
   "license": "SEE LICENSE IN LICENSE",
   "type": "module",
