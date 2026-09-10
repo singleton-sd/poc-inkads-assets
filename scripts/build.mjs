@@ -6,7 +6,6 @@ import {
   readFile,
   readdir,
   rm,
-  stat,
   writeFile,
 } from "node:fs/promises";
 import { dirname, join, relative } from "node:path";
