@@ -16,9 +16,9 @@ pnpm add @singleton-sd/inkads-assets
 
 ## Copy-paste CDN URLs (GitHub Pages)
 
-After `main` deploys, `dist/` is served at site root (omit `/dist`):
+`dist/` is served at site root (omit `/dist`):
 
-Base: `https://singleton-sd.github.io/poc-inkads-assets`
+Base: **https://assets.inkads.poc.singletonsd.com**
 
 | Asset | URL |
 | --- | --- |
@@ -30,8 +30,7 @@ Base: `https://singleton-sd.github.io/poc-inkads-assets`
 | Lockup SVG (nav) | `…/logo/wordmark/lockup-horizontal/dark/dark.svg` |
 | Icon PNG 512 | `…/logo/static/dark/512.png` |
 
-Custom domain (`assets.inkads…` or `assets.singletonsd.com/inkads/`) is TBD —
-update `config/product.json` → `publicUrl` when chosen.
+DNS + Pages setup: [`docs/deployment.md`](docs/deployment.md).
 
 ## Legacy jsDelivr (pinned commit)
 

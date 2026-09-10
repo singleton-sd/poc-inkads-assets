@@ -12,11 +12,11 @@ test("validateAssets reports no errors on current tree", async () => {
   assert.deepEqual(errors, []);
 });
 
-test("product publicUrl is https Pages-style base", async () => {
+test("product publicUrl is the assets CDN host", async () => {
   const product = JSON.parse(
     await readFile(join(ROOT, "config/product.json"), "utf8"),
   );
-  assert.match(product.publicUrl, /^https:\/\//);
+  assert.equal(product.publicUrl, "https://assets.inkads.poc.singletonsd.com");
   assert.match(product.id, /inkads/i);
 });
 

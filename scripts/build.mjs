@@ -218,6 +218,11 @@ async function main() {
   await copyOg();
   await copyVectorsToDist();
   await writeCatalogHtml();
+  const product = JSON.parse(
+    await readFile(join(ROOT, "config/product.json"), "utf8"),
+  );
+  const host = new URL(product.publicUrl).hostname;
+  await writeFile(join(DIST, "CNAME"), `${host}\n`);
   await writeManifest();
 
   const files = await walkFiles(DIST);

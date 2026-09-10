@@ -3,7 +3,8 @@
 Source of truth for **InkAds logo / favicon / OG binaries** is this package
 (`@singleton-sd/inkads-assets`). Parent brand: [Singleton SD](https://singletonsd.com).
 
-Public catalog (after Pages deploy): see `config/product.json` → `publicUrl`.
+Public catalog: [assets.inkads.poc.singletonsd.com](https://assets.inkads.poc.singletonsd.com)
+(`config/product.json` → `publicUrl`).
 
 Token **values** should align with `@singleton-sd/tokens` semantic yellows/grays
 when the product adopts the design-system package; until then the hex values in

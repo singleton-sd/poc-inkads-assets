@@ -32,8 +32,8 @@ https://cdn.jsdelivr.net/gh/singleton-sd/poc-inkads-assets@<sha>/svg/icon/icon-d
 ## Follow-ups
 
 - Outline lockup `<text>` to paths for deterministic PNG / email.
-- Custom CDN host vs `assets.singletonsd.com/inkads/`.
 - Email / documents packs.
+- Point marketing at Pages URLs (`https://assets.inkads.poc.singletonsd.com/…`).
 - npm publish of `@singleton-sd/inkads-assets` (optional; Pages is primary).
 
 ## npm package
