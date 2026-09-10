@@ -32,6 +32,9 @@ Base: **https://assets.inkads.poc.singletonsd.com**
 
 DNS + Pages setup: [`docs/deployment.md`](docs/deployment.md).
 
+Firmware / e-paper / on-device UI: [`docs/firmware-consume.md`](docs/firmware-consume.md)
+(mono SVG/PNG, favicons, pin strategy).
+
 ## Legacy jsDelivr (pinned commit)
 
 Marketing and other consumers may still load vectors from a **pinned SHA**
@@ -74,7 +77,9 @@ meta.json            # inventory contract
 
 ## Related
 
-- Issue [#1](https://github.com/singleton-sd/poc-inkads-assets/issues/1) — production packaging
+- Issue [#6](https://github.com/singleton-sd/poc-inkads-assets/issues/6) — firmware / device consume docs
 - [poc-inkads-marketing](https://github.com/singleton-sd/poc-inkads-marketing)
+- [poc-inkads-firmware-display-device](https://github.com/singleton-sd/poc-inkads-firmware-display-device)
 - Blueprint: GitLab `@singleton-sd/assets`
 - Workflow: [docs/logo-asset-workflow.md](docs/logo-asset-workflow.md)
+- Firmware contract: [docs/firmware-consume.md](docs/firmware-consume.md)
