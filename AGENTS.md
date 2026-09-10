@@ -25,13 +25,15 @@ favicons / rasters / OG). It is not the Singleton SD company assets package
 ## Build / verify
 
 ```sh
-npm ci
-npm run validate
-npm test
-npm run build
+pnpm install
+pnpm validate
+pnpm test
+pnpm build
 ```
 
 CI must leave `src/` and `svg/` unchanged (`git diff` clean after build).
+Releases use Trusted Publishing (OIDC) via `.github/workflows/release.yml`
+(`pnpm release:ci`) — no long-lived `NPM_TOKEN`.
 
 ## Related
 
