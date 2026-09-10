@@ -8,5 +8,6 @@
   "dependencies": {
     "sharp": "^0.33.5",
     "to-ico": "^1.1.5"
-  }
+  },
+  "description": "POC InkAds brand SVG/PNG export. CDN consume path: see README. Target npm: @singleton-sd/inkads-assets (#1)."
 }
