@@ -3,8 +3,8 @@
 SVG masters and PNG exports for the InkAds product mark. Parent brand:
 [Singleton SD](https://singletonsd.com).
 
-Design source: recommended system **3a** (icon) + **3b** (horizontal lockup).
-See `MANIFEST.json` for the full catalog and usage rules.
+Design source: recommended system **3a** (icon) + **3b** (wordmark / horizontal
+lockup). See `MANIFEST.json` for the full catalog and usage rules.
 
 > Production build/CDN packaging is tracked in
 > [#1](https://github.com/singleton-sd/poc-inkads-assets/issues/1). Until then,
