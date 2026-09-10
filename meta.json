@@ -16,13 +16,50 @@
     "marketing": "src/marketing/"
   },
   "legacySvgRoot": "svg/",
+  "tokens": {
+    "package": "@singleton-sd/tokens",
+    "version": "1.5.0",
+    "source": "gitlab.com/singleton-sd/design-system/tokens",
+    "note": "Authoritative semantic ids for product yellows/grays. SVG masters keep baked hex and do not import the package at runtime."
+  },
   "colors": {
-    "yellowDark500": "#FFB300",
-    "yellowLight500": "#C89200",
-    "gray500": "#7F848A",
-    "gray300": "#C9CCD1",
-    "black": "#000000",
-    "white": "#FFFFFF"
+    "yellowDark500": {
+      "hex": "#FFB300",
+      "tokenId": "yellow-dark-500",
+      "cssVar": "--ssd-color-yellow-dark-500",
+      "usage": "primary mark on dark / black backgrounds"
+    },
+    "yellowLight500": {
+      "hex": "#C89200",
+      "tokenId": "yellow-light-500",
+      "cssVar": "--ssd-color-yellow-light-500",
+      "usage": "primary mark on light / white backgrounds"
+    },
+    "gray500": {
+      "hex": "#7F848A",
+      "tokenId": "gray-600",
+      "cssVar": "--ssd-color-gray-600",
+      "usage": "secondary bars / “BY SINGLETON SD” on dark lockups",
+      "note": "Legacy camelCase key gray500; hex matches tokens gray-600, not gray-500 (#9DA1A6)."
+    },
+    "gray300": {
+      "hex": "#C9CCD1",
+      "tokenId": "gray-300",
+      "cssVar": "--ssd-color-gray-300",
+      "usage": "muted gray accents on light themes"
+    },
+    "black": {
+      "hex": "#000000",
+      "tokenId": "black",
+      "cssVar": "--ssd-color-black",
+      "usage": "dark backgrounds / mono ink"
+    },
+    "white": {
+      "hex": "#FFFFFF",
+      "tokenId": "white",
+      "cssVar": "--ssd-color-white",
+      "usage": "light backgrounds / mono paper"
+    }
   },
   "designSource": "InkAds Logo.dc.html — recommended system 3a (icon) + 3b (wordmark / horizontal lockup)"
 }

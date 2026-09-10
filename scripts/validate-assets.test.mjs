@@ -26,6 +26,17 @@ test("meta.json declares mono theme for e-paper", async () => {
   assert.ok(meta.roles.includes("lockup-horizontal"));
 });
 
+test("meta.json maps brand hex to @singleton-sd/tokens ids", async () => {
+  const meta = JSON.parse(await readFile(join(ROOT, "meta.json"), "utf8"));
+  assert.equal(meta.tokens?.package, "@singleton-sd/tokens");
+  assert.match(String(meta.tokens?.version ?? ""), /^\d+\.\d+\.\d+/);
+  assert.equal(meta.colors.yellowDark500.tokenId, "yellow-dark-500");
+  assert.equal(meta.colors.yellowDark500.hex.toUpperCase(), "#FFB300");
+  assert.equal(meta.colors.yellowLight500.tokenId, "yellow-light-500");
+  assert.equal(meta.colors.gray500.tokenId, "gray-600");
+  assert.equal(meta.colors.gray300.tokenId, "gray-300");
+});
+
 test("assertSvgSafe rejects external href even with xmlns", () => {
   const evil = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
   <image href="https://attacker.example/x.png"/>
