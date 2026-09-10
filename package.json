@@ -1,32 +1,49 @@
 {
   "name": "@singleton-sd/inkads-assets",
   "version": "0.1.0",
-  "private": true,
-  "description": "InkAds brand SVG masters, favicons, and OG images. Primary delivery is GitHub Pages CDN.",
+  "description": "InkAds brand SVG masters, favicons, and OG images. Primary delivery is GitHub Pages CDN; npm ships the versioned dist catalog.",
+  "license": "SEE LICENSE IN LICENSE",
   "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "packageManager": "pnpm@11.22.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/singleton-sd/poc-inkads-assets.git"
   },
-  "author": "Singleton SD",
-  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/singleton-sd/poc-inkads-assets/issues"
+  },
+  "homepage": "https://github.com/singleton-sd/poc-inkads-assets#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "src",
+    "svg",
+    "meta.json",
+    "config",
+    "BRAND.md",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md"
+  ],
   "scripts": {
     "sync:legacy-svg": "node scripts/sync-legacy-svg.mjs",
     "validate": "node scripts/validate-assets.mjs",
     "test": "node --test scripts/validate-assets.test.mjs",
     "build": "node scripts/build.mjs",
-    "generate": "npm run build"
+    "generate": "pnpm build",
+    "prepublishOnly": "pnpm build",
+    "release": "release-it -VV --dry-run --ci",
+    "release:ci": "release-it --ci"
   },
-  "engines": {
-    "node": "22.x"
-  },
-  "files": [
-    "dist",
-    "src",
-    "meta.json",
-    "BRAND.md"
-  ],
-  "dependencies": {
+  "devDependencies": {
+    "@release-it/conventional-changelog": "^10.0.6",
+    "conventional-changelog-conventionalcommits": "^8.0.0",
+    "release-it": "^19.2.4",
     "sharp": "^0.33.5",
     "to-ico": "^1.1.5"
   },
@@ -34,6 +51,7 @@
     "inkads",
     "assets",
     "favicon",
-    "brand"
+    "brand",
+    "singleton-sd"
   ]
 }

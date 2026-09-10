@@ -1,0 +1,3 @@
+# Single-package repo; pnpm 11 settings live here (not package.json).
+allowBuilds:
+  sharp: true

@@ -35,3 +35,8 @@ https://cdn.jsdelivr.net/gh/singleton-sd/poc-inkads-assets@<sha>/svg/icon/icon-d
 - Custom CDN host vs `assets.singletonsd.com/inkads/`.
 - Email / documents packs.
 - npm publish of `@singleton-sd/inkads-assets` (optional; Pages is primary).
+
+## npm package
+
+`@singleton-sd/inkads-assets` publishes via GitHub Actions Trusted Publishing
+(OIDC). See `.github/workflows/release.yml`. Do not add `NPM_TOKEN` for publish.

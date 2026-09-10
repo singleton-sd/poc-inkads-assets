@@ -6,8 +6,13 @@ mark. Parent brand: [Singleton SD](https://singletonsd.com).
 Design source: recommended system **3a** (icon) + **3b** (horizontal lockup).
 See [BRAND.md](BRAND.md) and `meta.json`.
 
-Package target: `@singleton-sd/inkads-assets` (not published to npm yet — **Pages
-CDN is primary**, same model as company `@singleton-sd/assets`).
+Package: [`@singleton-sd/inkads-assets`](https://www.npmjs.com/package/@singleton-sd/inkads-assets)
+(Trusted Publishing / OIDC from GitHub Actions). **Pages CDN is still primary**
+for HTML consumers; npm ships a versioned `dist/` + masters for apps.
+
+```sh
+pnpm add @singleton-sd/inkads-assets
+```
 
 ## Copy-paste CDN URLs (GitHub Pages)
 
@@ -46,13 +51,16 @@ Example icon:
 ## Develop
 
 ```sh
-npm ci
-npm run validate
-npm test
-npm run build   # writes dist/ (gitignored)
+pnpm install
+pnpm validate
+pnpm test
+pnpm build   # writes dist/ (gitignored)
 ```
 
-Requires Node 22 (`\.nvmrc`).
+Requires Node 22 (`.nvmrc`) and pnpm 11 (`packageManager` field).
+
+Release (CI only): `pnpm release:ci` via `.github/workflows/release.yml`.
+Local dry-run: `pnpm release`.
 
 ## Layout
 
