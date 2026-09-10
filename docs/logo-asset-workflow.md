@@ -34,9 +34,9 @@ https://cdn.jsdelivr.net/gh/singleton-sd/poc-inkads-assets@<sha>/svg/icon/icon-d
 - Outline lockup `<text>` to paths for deterministic PNG / email.
 - Email / documents packs.
 - Point marketing at Pages URLs (`https://assets.inkads.poc.singletonsd.com/…`).
-- npm publish of `@singleton-sd/inkads-assets` (optional; Pages is primary).
 
 ## npm package
 
-`@singleton-sd/inkads-assets` publishes via GitHub Actions Trusted Publishing
-(OIDC). See `.github/workflows/release.yml`. Do not add `NPM_TOKEN` for publish.
+Pages CDN is primary for HTML consumers. `@singleton-sd/inkads-assets` already
+publishes via GitHub Actions Trusted Publishing (OIDC) —
+`.github/workflows/release.yml` / `pnpm release:ci`. Do not add `NPM_TOKEN`.

@@ -22,14 +22,18 @@ function assertSvgSafe(svg, path) {
   if (/<script/i.test(svg) || /\son[a-z]+\s*=/i.test(svg)) {
     throw new Error(`${path}: scripts / event handlers are not allowed`);
   }
-  if (/https?:\/\//i.test(svg) && !/xmlns\s*=\s*"http:\/\/www\.w3\.org/.test(svg)) {
-    // allow xmlns only; flag other absolute URLs
-    const stripped = svg.replace(/xmlns="[^"]+"/g, "");
-    if (/https?:\/\//i.test(stripped)) {
-      throw new Error(`${path}: external URLs are not allowed`);
-    }
+  // Strip approved W3C xmlns declarations, then reject any remaining absolute
+  // or scheme-relative URLs (e.g. external <image href="https://…">).
+  const stripped = svg.replace(
+    /\s+xmlns(?::[\w-]+)?\s*=\s*(["'])https?:\/\/www\.w3\.org[^"']*\1/gi,
+    "",
+  );
+  if (/(?:https?:)?\/\//i.test(stripped)) {
+    throw new Error(`${path}: external URLs are not allowed`);
   }
 }
+
+export { assertSvgSafe };
 
 const MARK_THEMES = ["dark", "light", "mono", "favicon"];
 

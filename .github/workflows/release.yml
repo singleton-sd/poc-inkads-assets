@@ -40,8 +40,8 @@ jobs:
       - name: Upgrade npm for OIDC publish
         run: |
           set -euo pipefail
-          # Pin npm@11: npm@latest may jump majors and break release-it argv.
-          npm install -g npm@11
+          # Trusted Publishing needs npm ≥ 11.5.1; pin exact to avoid range drift.
+          npm install -g npm@11.5.1
           npm --version
           for npmrc in "$PWD/.npmrc" "$(npm config get userconfig)" "$(npm config get globalconfig)"; do
             if [[ -f "$npmrc" ]] && grep -qE 'always-auth|^//registry\.npmjs\.org|_authToken' "$npmrc"; then

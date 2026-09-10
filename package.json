@@ -36,7 +36,7 @@
     "test": "node --test scripts/validate-assets.test.mjs",
     "build": "node scripts/build.mjs",
     "generate": "pnpm build",
-    "prepublishOnly": "pnpm build",
+    "prepublishOnly": "pnpm sync:legacy-svg && pnpm validate && pnpm build",
     "release": "release-it -VV --dry-run --ci",
     "release:ci": "release-it --ci"
   },

@@ -23,7 +23,7 @@ when the product adopts the design-system package; until then the hex values in
 | Horizontal lockup (3b) | `src/logo/wordmark/sources/lockup-horizontal/` | Headers / wide UI |
 | Stacked lockup (3c) | `src/logo/wordmark/sources/lockup-stacked/` | Centered / square |
 | Wordmark (3d) | `src/logo/wordmark/sources/wordmark/` | Text + refresh lines only |
-| Mono (3e) | `*-mono.svg` themes | E-paper / single-ink |
+| Mono (3e) | `src/logo/sources/mono.svg` and `src/logo/wordmark/sources/lockup-horizontal/mono.svg` | E-paper / single-ink |
 
 ## Usage
 
