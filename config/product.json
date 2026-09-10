@@ -1,0 +1,10 @@
+{
+  "id": "inkads",
+  "name": "InkAds",
+  "shortName": "InkAds",
+  "parentBrand": "Singleton SD",
+  "publicUrl": "https://assets.inkads.poc.singletonsd.com",
+  "themeColor": "#FFB300",
+  "backgroundColor": "#000000",
+  "cdnNote": "GitHub Pages serves dist/ at site root under assets.inkads.poc.singletonsd.com (CNAME → singleton-sd.github.io)."
+}
