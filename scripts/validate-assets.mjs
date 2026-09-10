@@ -73,7 +73,11 @@ export async function validateAssets() {
         continue;
       }
       try {
-        assertSvgSafe(await readFile(full, "utf8"), path);
+        const svg = await readFile(full, "utf8");
+        assertSvgSafe(svg, path);
+        if (/<text\b/i.test(svg)) {
+          errors.push(`${path}: outline <text> to paths (pnpm outline:text)`);
+        }
       } catch (e) {
         errors.push(e.message);
       }

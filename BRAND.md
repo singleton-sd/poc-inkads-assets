@@ -25,14 +25,18 @@ when the product adopts the design-system package; until then the hex values in
 | Wordmark (3d) | `src/logo/wordmark/sources/wordmark/` | Text + refresh lines only |
 | Mono (3e) | `src/logo/sources/mono.svg` and `src/logo/wordmark/sources/lockup-horizontal/mono.svg` | E-paper / single-ink |
 
+Lockup and wordmark SVGs are **outlined paths** (no `<text>`). Rebuild outlines
+with `pnpm outline:text` after editing masters that still use text (requires
+`fonts/OpenSauceSans-*.otf`).
+
 ## Usage
 
 - Do not stretch. Keep aspect ratio.
 - Clear space ≈ mark height.
 - Yellow-dark (`#FFB300`) on black; yellow-light (`#C89200`) on white.
 - Use `favicon` / 16px simplified mark for browser favicons.
-- Lockup SVGs still contain `<text>` (Open Sauce Sans). Browsers render them;
-  CI PNG rasterization may fall back to a system font until text is outlined.
+- Lockup / wordmark SVGs use outlined paths (no `<text>`). Run `pnpm outline:text`
+  if you introduce live text again.
 
 ## Layout
 

@@ -3,9 +3,11 @@
 ## Masters
 
 1. Update SVG under `src/logo/…` (or OG under `src/og-image/…`).
-2. Run `npm run sync:legacy-svg` so root `svg/` matches (legacy CDN).
-3. Run `npm run validate && npm run build`.
-4. Commit `src/` + synced `svg/` (never commit `dist/`).
+2. If wordmark/lockup masters use `<text>`, run `pnpm outline:text` (needs
+   `fonts/OpenSauceSans-*.otf`).
+3. Run `pnpm sync:legacy-svg` so root `svg/` matches (legacy CDN).
+4. Run `pnpm validate && pnpm build`.
+5. Commit `src/` + synced `svg/` + fonts if changed (never commit `dist/`).
 
 ## Build outputs
 
@@ -31,9 +33,9 @@ https://cdn.jsdelivr.net/gh/singleton-sd/poc-inkads-assets@<sha>/svg/icon/icon-d
 
 ## Follow-ups
 
-- Outline lockup `<text>` to paths for deterministic PNG / email.
 - Email / documents packs.
-- Point marketing at Pages URLs (`https://assets.inkads.poc.singletonsd.com/…`).
+- Point marketing at Pages URLs (`https://assets.inkads.poc.singletonsd.com/…`)
+  — see marketing issue #94 / PR.
 
 ## npm package
 
