@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.3.0](https://github.com/singleton-sd/poc-inkads-assets/compare/0.2.2...0.3.0) (2026-09-11)
+
+### Features
+
+* [#9](https://github.com/singleton-sd/poc-inkads-assets/issues/9) Design 800×480 house-ad source with QR CTA ([693caec](https://github.com/singleton-sd/poc-inkads-assets/commit/693caec4291ea7e19a958c299edbeff10404509b))
+
+### Bug Fixes
+
+* [#9](https://github.com/singleton-sd/poc-inkads-assets/issues/9) Use ASCII-only house-ad SVG comments for sharp ([1ed1133](https://github.com/singleton-sd/poc-inkads-assets/commit/1ed1133a1988e0311ed783a11fbc0097e2d1893a))
+
 ## [0.2.2](https://github.com/singleton-sd/poc-inkads-assets/compare/0.2.1...0.2.2) (2026-09-10)
 
 ## [0.2.1](https://github.com/singleton-sd/poc-inkads-assets/compare/0.2.0...0.2.1) (2026-09-10)
