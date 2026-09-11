@@ -13,7 +13,8 @@
     "documents": "src/documents/",
     "illustrations": "src/illustrations/",
     "screenshots": "src/screenshots/",
-    "marketing": "src/marketing/"
+    "marketing": "src/marketing/",
+    "houseAd": "src/marketing/house-ad/"
   },
   "legacySvgRoot": "svg/",
   "tokens": {
