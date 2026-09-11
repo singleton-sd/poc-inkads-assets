@@ -46,6 +46,7 @@
     "@release-it/conventional-changelog": "^10.0.6",
     "@singleton-sd/inkads-epaper-renderer": "1.4.1",
     "conventional-changelog-conventionalcommits": "^8.0.0",
+    "jsqr": "1.4.0",
     "qrcode": "1.5.4",
     "release-it": "^19.2.4",
     "sharp": "^0.33.5",

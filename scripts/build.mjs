@@ -199,7 +199,7 @@ async function writeCatalogHtml() {
   <h2>Previews</h2>
   <p><img src="./svg/icon/icon-dark.svg" alt="icon dark" width="48" height="48" />
      <img src="./logo/wordmark/lockup-horizontal/dark/dark.svg" alt="lockup dark" height="40" /></p>
-  <p><img src="./marketing/house-ad/preview.png" alt="house-ad 800x480 preview" width="400" height="240" /></p>
+  <p><img src="./marketing/house-ad/preview.png" alt="house-ad 800x480 preview" width="400" height="240" style="max-height: 240px" /></p>
 
   <h2>Legacy jsDelivr</h2>
   <pre>https://cdn.jsdelivr.net/gh/singleton-sd/poc-inkads-assets@&lt;sha&gt;/svg/icon/icon-dark.svg</pre>
