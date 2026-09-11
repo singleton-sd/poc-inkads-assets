@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.4.0](https://github.com/singleton-sd/poc-inkads-assets/compare/0.3.0...0.4.0) (2026-09-11)
+
+### Features
+
+* [#10](https://github.com/singleton-sd/poc-inkads-assets/issues/10) Render and publish house-ad Waveshare package ([b642b0e](https://github.com/singleton-sd/poc-inkads-assets/commit/b642b0ef528bdafd0db2ed205b4f4636b1685636))
+
+### Bug Fixes
+
+* address review — catalog preview size and house-ad test coverage ([121c501](https://github.com/singleton-sd/poc-inkads-assets/commit/121c5017c3ad080680c10fbe850cfed2aa6c185b))
+
 ## [0.3.0](https://github.com/singleton-sd/poc-inkads-assets/compare/0.2.2...0.3.0) (2026-09-11)
 
 ### Features
