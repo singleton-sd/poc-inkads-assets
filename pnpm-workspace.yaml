@@ -1,3 +1,5 @@
 # Single-package repo; pnpm 11 settings live here (not package.json).
 allowBuilds:
   sharp: true
+minimumReleaseAgeExclude:
+  - '@singleton-sd/inkads-epaper-renderer@1.4.1'
