@@ -29,8 +29,13 @@ Base: **https://assets.inkads.poc.singletonsd.com**
 | Icon SVG (nav) | `…/svg/icon/icon-dark.svg` |
 | Lockup SVG (nav) | `…/logo/wordmark/lockup-horizontal/dark/dark.svg` |
 | Icon PNG 512 | `…/logo/static/dark/512.png` |
+| House-ad preview | `…/marketing/house-ad/preview.png` |
+| House-ad framebuffer | `…/marketing/house-ad/framebuffer.bin` |
+| House-ad metadata | `…/marketing/house-ad/metadata.json` |
 
 DNS + Pages setup: [`docs/deployment.md`](docs/deployment.md).
+
+House-ad Waveshare package (POC-260): [`src/marketing/house-ad/README.md`](src/marketing/house-ad/README.md).
 
 Firmware / e-paper / on-device UI: [`docs/firmware-consume.md`](docs/firmware-consume.md)
 (mono SVG/PNG, favicons, pin strategy).
