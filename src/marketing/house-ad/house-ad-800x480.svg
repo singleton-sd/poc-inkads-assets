@@ -4,7 +4,7 @@
 
   <!-- Left brand column -->
   <g transform="translate(48, 56)">
-    <!-- Mono mark adapted from src/logo/sources/mono.svg (64’96) -->
+    <!-- Mono mark adapted from src/logo/sources/mono.svg (64 scaled to 96) -->
     <g transform="scale(1.5)">
       <rect x="1.75" y="1.75" width="60.5" height="60.5" rx="6" stroke="#000000" stroke-width="3.5"/>
       <rect x="12.5" y="12.5" width="17" height="39" fill="#000000"/>
