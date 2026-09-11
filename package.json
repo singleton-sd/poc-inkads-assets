@@ -33,16 +33,18 @@
   "scripts": {
     "sync:legacy-svg": "node scripts/sync-legacy-svg.mjs",
     "validate": "node scripts/validate-assets.mjs",
-    "test": "node --test scripts/validate-assets.test.mjs",
+    "test": "node --test scripts/*.test.mjs",
     "build": "node scripts/build.mjs",
     "generate": "pnpm build",
     "generate:house-ad-qr": "node scripts/generate-house-ad-qr.mjs",
+    "render:house-ad": "node scripts/render-house-ad.mjs",
     "prepublishOnly": "pnpm sync:legacy-svg && pnpm validate && pnpm build",
     "release": "release-it -VV --dry-run --ci",
     "release:ci": "release-it --ci"
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^10.0.6",
+    "@singleton-sd/inkads-epaper-renderer": "1.4.1",
     "conventional-changelog-conventionalcommits": "^8.0.0",
     "qrcode": "1.5.4",
     "release-it": "^19.2.4",
