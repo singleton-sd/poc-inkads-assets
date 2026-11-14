@@ -46,6 +46,10 @@ jobs:
           app-id: ${{ vars.RELEASE_APP_ID }}
           private-key: ${{ secrets.RELEASE_APP_PRIVATE_KEY }}
           owner: singleton-sd
+          repositories: poc-inkads-assets
+          # contents covers commits, tags, and GitHub Releases. Any
+          # permission-* input drops the rest of the installation grants.
+          permission-contents: write
 
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
