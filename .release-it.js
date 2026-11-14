@@ -1,15 +1,21 @@
 /**
+ * Tag-only releases: never commit or push to the default branch.
+ * Version comes from the latest X.Y.Z tag + conventional commits.
+ * package.json is bumped in the CI workspace for npm publish only.
+ *
  * @typedef {import('release-it').Config} ReleaseItConfig
  * @type {ReleaseItConfig}
  */
 export default {
   git: {
-    commitMessage: "chore: Release v${version}\n\n[skip ci]",
     tagName: "${version}",
+    tagMatch: "[0-9]*.[0-9]*.[0-9]*",
     requireBranch: "main",
     requireCleanWorkingDir: true,
-    commit: true,
-    push: true,
+    requireCommits: true,
+    requireCommitsFail: false,
+    commit: false,
+    push: false,
     tag: true,
   },
   npm: {
@@ -33,7 +39,7 @@ export default {
   },
   plugins: {
     "@release-it/conventional-changelog": {
-      infile: "CHANGELOG.md",
+      infile: false,
       preset: {
         name: "conventionalcommits",
         compareUrlFormat:

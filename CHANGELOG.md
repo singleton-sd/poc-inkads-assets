@@ -1,5 +1,11 @@
 # Changelog
 
+Release notes now live in
+[GitHub Releases](https://github.com/singleton-sd/poc-inkads-assets/releases).
+This file is a historical record through 0.4.0 and is no longer updated by the
+release workflow (tag-only releases; `package.json` / changelog are not
+committed back to `main`).
+
 ## [0.4.0](https://github.com/singleton-sd/poc-inkads-assets/compare/0.3.0...0.4.0) (2026-09-11)
 
 ### Features

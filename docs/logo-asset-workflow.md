@@ -39,4 +39,6 @@ https://cdn.jsdelivr.net/gh/singleton-sd/poc-inkads-assets@<sha>/svg/icon/icon-d
 
 Pages CDN is primary for HTML consumers. `@singleton-sd/inkads-assets` already
 publishes via GitHub Actions Trusted Publishing (OIDC) —
-`.github/workflows/release.yml` / `pnpm release:ci`. Do not add `NPM_TOKEN`.
+`.github/workflows/release.yml` / `pnpm release:ci`. Releases are tag-only:
+the workflow must not commit or push to `main`. Do not add `NPM_TOKEN`. See
+[CONTRIBUTING.md](../CONTRIBUTING.md).

@@ -1,3 +1,10 @@
+# Tag-only release: compute the next version from the latest X.Y.Z tag plus
+# conventional commits, bump package.json in this workspace, publish to npm
+# (OIDC Trusted Publishing), push ONLY that tag, and open a GitHub Release.
+#
+# Never commit or push to the default branch. The CodeRabbit required ruleset
+# targets ~DEFAULT_BRANCH with bypass=never (GH013). GITHUB_TOKEN cannot
+# (and must not) bypass it. Tag refs are outside that branch ruleset.
 name: Release
 
 on:
@@ -10,12 +17,11 @@ concurrency:
   cancel-in-progress: false
 
 permissions:
-  contents: write
-  id-token: write
+  contents: write # create version tags + GitHub Releases
+  id-token: write # npm Trusted Publishing (OIDC)
 
 jobs:
   release:
-    if: "${{ github.event_name == 'workflow_dispatch' || !startsWith(github.event.head_commit.message, 'chore: Release') }}"
     runs-on: ubuntu-latest
     name: release-it
     steps:
@@ -71,5 +77,10 @@ jobs:
             "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git fetch origin main --tags
           git checkout -B main origin/main
-          # Do not retry blindly: commit/tag may already exist if a later step failed.
+          # Do not retry blindly: the version tag may already exist if a later
+          # step (npm publish / GitHub Release) failed.
           pnpm release:ci
+          # Push ONLY the version tag (release-it git.commit/git.push are false).
+          # Never `git push origin HEAD` / `main` — that hits GH013.
+          TAG="$(node -p "require('./package.json').version")"
+          git push origin "refs/tags/${TAG}"

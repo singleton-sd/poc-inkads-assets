@@ -32,8 +32,12 @@ pnpm build
 ```
 
 CI must leave `src/` and `svg/` unchanged (`git diff` clean after build).
-Releases use Trusted Publishing (OIDC) via `.github/workflows/release.yml`
-(`pnpm release:ci`) — no long-lived `NPM_TOKEN`.
+Releases are tag-only: `.github/workflows/release.yml` / `pnpm release:ci`
+must never commit or push to `main` (no version-bump or CHANGELOG commits,
+no ruleset bypass). Version comes from the latest `X.Y.Z` tag plus
+conventional commits; `package.json` is bumped in the CI workspace for npm
+Trusted Publishing (OIDC) only. Notes live in GitHub Releases. See
+[CONTRIBUTING.md](CONTRIBUTING.md). Do not add `NPM_TOKEN`.
 
 ## Related
 
