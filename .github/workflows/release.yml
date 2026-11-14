@@ -79,8 +79,7 @@ jobs:
           git checkout -B main origin/main
           # Do not retry blindly: the version tag may already exist if a later
           # step (npm publish / GitHub Release) failed.
+          # Tag-only: git.commit/git.push are false. The version tag is pushed
+          # from the before:github:release hook (`git push origin refs/tags/<version>`),
+          # never HEAD / main (that hits GH013).
           pnpm release:ci
-          # Push ONLY the version tag (release-it git.commit/git.push are false).
-          # Never `git push origin HEAD` / `main` — that hits GH013.
-          TAG="$(node -p "require('./package.json').version")"
-          git push origin "refs/tags/${TAG}"

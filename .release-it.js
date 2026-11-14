@@ -21,9 +21,14 @@ export default {
   npm: {
     publish: true,
     skipChecks: true, // required for OIDC — npm whoami fails without a static token
+    // package.json on main lags the latest tag; git tags are the version source.
+    ignoreVersion: true,
   },
   hooks: {
     "before:release": "pnpm validate && pnpm test && pnpm build",
+    // Push ONLY the version tag after git.tag and before GitHub Release
+    // (after:git:release is skipped when git.push is false).
+    "before:github:release": 'git push origin "refs/tags/${version}"',
   },
   github: {
     release: true,
