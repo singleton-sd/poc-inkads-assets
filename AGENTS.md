@@ -32,12 +32,12 @@ pnpm build
 ```
 
 CI must leave `src/` and `svg/` unchanged (`git diff` clean after build).
-Releases are tag-only: `.github/workflows/release.yml` / `pnpm release:ci`
-must never commit or push to `main` (no version-bump or CHANGELOG commits,
-no ruleset bypass). Version comes from the latest `X.Y.Z` tag plus
-conventional commits; `package.json` is bumped in the CI workspace for npm
-Trusted Publishing (OIDC) only. Notes live in GitHub Releases. See
-[CONTRIBUTING.md](CONTRIBUTING.md). Do not add `NPM_TOKEN`.
+Releases (`pnpm release:ci` via `.github/workflows/release.yml`) commit the
+version bump and `CHANGELOG.md` to `main` using the **singleton-release**
+GitHub App (`vars.RELEASE_APP_ID` + `secrets.RELEASE_APP_PRIVATE_KEY`) so
+the push can bypass the CodeRabbit required ruleset. Do not use
+`GITHUB_TOKEN` or a PAT for that push. Do not add `NPM_TOKEN` (OIDC Trusted
+Publishing). See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Related
 

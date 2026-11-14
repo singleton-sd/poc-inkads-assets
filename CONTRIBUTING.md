@@ -7,38 +7,30 @@ messages and PR titles. The next published version is computed from the latest
 git tag plus these commits (`feat` → minor, `fix` → patch,
 `BREAKING CHANGE` → major).
 
-Do not bump `package.json` in a feature PR for the sake of releasing. The
-committed version on `main` is not the source of truth; git tags are.
+Do not bump `package.json` or edit `CHANGELOG.md` in a feature PR for the sake
+of releasing. The release workflow does that on merge to `main`.
 
-## Releases (tag-only)
+## Releases
 
-Singleton SD repos use **tag-only releases**. The release workflow must never
-commit or push to the default branch (no version-bump or `CHANGELOG.md`
-commits) and must not use a ruleset bypass.
+On merge to `main` (or `workflow_dispatch`), `.github/workflows/release.yml`
+runs `pnpm release:ci` (release-it):
 
-On merge to `main` (or `workflow_dispatch`):
-
-1. The next version is computed from the latest `X.Y.Z` tag plus conventional
+1. Compute the next version from the latest `X.Y.Z` tag plus conventional
    commits. Git tags in this repo are unprefixed (`0.4.0`); GitHub Release
    titles use `vX.Y.Z`.
-2. `package.json` is bumped in the CI workspace only (not committed).
-3. `@singleton-sd/inkads-assets` is published to npm via Trusted Publishing
-   (OIDC). Do not add `NPM_TOKEN`.
-4. Only that version tag is pushed, from the `before:github:release` hook
-   (GitHub Actions only, after a strict `X.Y.Z` check):
-   `git push origin refs/tags/<version>` (never `HEAD` / `main`).
-5. A GitHub Release is created with notes generated from conventional commits.
+2. Bump `package.json` and write `CHANGELOG.md`.
+3. Commit `chore(release): vX.Y.Z [skip ci]`, tag, and push to `main`.
+4. Publish `@singleton-sd/inkads-assets` to npm via Trusted Publishing (OIDC).
+   Do not add `NPM_TOKEN`.
+5. Create a GitHub Release with the generated notes.
 
-The workflow uses the built-in `GITHUB_TOKEN` with `contents: write` (tags +
-Releases) and `id-token: write` (npm OIDC). The **CodeRabbit required**
-ruleset targets `~DEFAULT_BRANCH` with bypass `never`, so a push of `main`
-from Actions is rejected (GH013). Tag refs are outside that branch ruleset;
-do not add version tags to a branch ruleset include list.
+The git push uses the **singleton-release** GitHub App
+(`vars.RELEASE_APP_ID` + `secrets.RELEASE_APP_PRIVATE_KEY`), which is on the
+default-branch ruleset bypass list. Do not use `GITHUB_TOKEN` or a PAT for
+that push — `GITHUB_TOKEN` cannot bypass the CodeRabbit required ruleset
+(GH013).
 
-Release notes live in
-[GitHub Releases](https://github.com/singleton-sd/poc-inkads-assets/releases).
-`CHANGELOG.md` is kept as a historical record through 0.4.0 and is no longer
-updated by the release workflow.
+The job is skipped when the head commit message starts with `chore(release):`,
+so the release commit does not loop.
 
-CI only: `pnpm release:ci` via `.github/workflows/release.yml`. Local dry-run:
-`pnpm release`.
+Local dry-run: `pnpm release`.

@@ -66,13 +66,10 @@ pnpm build   # writes dist/ (gitignored)
 
 Requires Node 22 (`.nvmrc`) and pnpm 11 (`packageManager` field).
 
-Releases are **tag-only** (org convention, 14 Nov 2026): on merge to `main`
-the next version is computed from the latest `X.Y.Z` tag plus conventional
-commits, `package.json` is bumped in CI only, npm publish runs via OIDC, and
-**only** that tag is pushed — never a commit to `main`, and never a ruleset
-bypass. Notes live in
-[GitHub Releases](https://github.com/singleton-sd/poc-inkads-assets/releases).
-See [CONTRIBUTING.md](CONTRIBUTING.md).
+Releases (on merge to `main`) bump `package.json` and `CHANGELOG.md`, commit
+`chore(release): vX.Y.Z [skip ci]`, tag, publish to npm via OIDC, and open a
+GitHub Release. The push to `main` uses the **singleton-release** GitHub App
+(ruleset bypass). See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 CI: `pnpm release:ci` via `.github/workflows/release.yml`. Local dry-run:
 `pnpm release`.
