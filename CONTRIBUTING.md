@@ -24,7 +24,8 @@ On merge to `main` (or `workflow_dispatch`):
 2. `package.json` is bumped in the CI workspace only (not committed).
 3. `@singleton-sd/inkads-assets` is published to npm via Trusted Publishing
    (OIDC). Do not add `NPM_TOKEN`.
-4. Only that version tag is pushed, from the `before:github:release` hook:
+4. Only that version tag is pushed, from the `before:github:release` hook
+   (GitHub Actions only, after a strict `X.Y.Z` check):
    `git push origin refs/tags/<version>` (never `HEAD` / `main`).
 5. A GitHub Release is created with notes generated from conventional commits.
 

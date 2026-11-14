@@ -26,9 +26,14 @@ export default {
   },
   hooks: {
     "before:release": "pnpm validate && pnpm test && pnpm build",
-    // Push ONLY the version tag after git.tag and before GitHub Release
-    // (after:git:release is skipped when git.push is false).
-    "before:github:release": 'git push origin "refs/tags/${version}"',
+    // after:git:release is skipped when git.push is false. Push the
+    // annotated tag immediately before the GitHub Release. release-it
+    // interpolates ${version}; $GITHUB_ACTIONS is expanded by the shell.
+    // Only push from Actions, and only a strict X.Y.Z tag — never HEAD/main.
+    "before:github:release":
+      'if [ "$GITHUB_ACTIONS" != true ]; then printf "%s\\n" "Skipping tag push outside GitHub Actions"; exit 0; fi; ' +
+      'if ! printf "%s\\n" "${version}" | grep -Eq "^[0-9]+\\.[0-9]+\\.[0-9]+$"; then printf "%s\\n" "Refusing to push non X.Y.Z tag: ${version}" >&2; exit 1; fi; ' +
+      'git push origin "refs/tags/${version}"',
   },
   github: {
     release: true,
