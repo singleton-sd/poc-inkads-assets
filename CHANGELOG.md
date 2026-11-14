@@ -1,5 +1,9 @@
 # Changelog
 
+This file is updated on each release (`chore(release): vX.Y.Z [skip ci]`).
+[GitHub Releases](https://github.com/singleton-sd/poc-inkads-assets/releases)
+get the same generated notes plus an npm package link.
+
 ## [0.4.0](https://github.com/singleton-sd/poc-inkads-assets/compare/0.3.0...0.4.0) (2026-09-11)
 
 ### Features

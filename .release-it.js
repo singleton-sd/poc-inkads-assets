@@ -1,10 +1,15 @@
 /**
+ * Releases commit the version bump and CHANGELOG.md to main, push the
+ * X.Y.Z tag, publish to npm (OIDC), and open a GitHub Release. The git
+ * push uses the singleton-release GitHub App (ruleset bypass). Do not
+ * use GITHUB_TOKEN or a PAT for that push.
+ *
  * @typedef {import('release-it').Config} ReleaseItConfig
  * @type {ReleaseItConfig}
  */
 export default {
   git: {
-    commitMessage: "chore: Release v${version}\n\n[skip ci]",
+    commitMessage: "chore(release): v${version} [skip ci]",
     tagName: "${version}",
     requireBranch: "main",
     requireCleanWorkingDir: true,

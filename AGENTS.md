@@ -32,8 +32,12 @@ pnpm build
 ```
 
 CI must leave `src/` and `svg/` unchanged (`git diff` clean after build).
-Releases use Trusted Publishing (OIDC) via `.github/workflows/release.yml`
-(`pnpm release:ci`) — no long-lived `NPM_TOKEN`.
+Releases (`pnpm release:ci` via `.github/workflows/release.yml`) commit the
+version bump and `CHANGELOG.md` to `main` using the **singleton-release**
+GitHub App (`vars.RELEASE_APP_ID` + `secrets.RELEASE_APP_PRIVATE_KEY`) so
+the push can bypass the CodeRabbit required ruleset. Do not use
+`GITHUB_TOKEN` or a PAT for that push. Do not add `NPM_TOKEN` (OIDC Trusted
+Publishing). See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Related
 
