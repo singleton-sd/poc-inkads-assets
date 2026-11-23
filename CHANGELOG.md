@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.4.1](https://github.com/singleton-sd/poc-inkads-assets/compare/0.4.0...0.4.1) (2026-11-23)
+
+### Bug Fixes
+
+* take next version from git tags and push the tag before the GitHub Release ([e6c4e22](https://github.com/singleton-sd/poc-inkads-assets/commit/e6c4e22af5e02429bf05b1ad1121b53002a484b7))
+
 This file is updated on each release (`chore(release): vX.Y.Z [skip ci]`).
 [GitHub Releases](https://github.com/singleton-sd/poc-inkads-assets/releases)
 get the same generated notes plus an npm package link.
