@@ -66,8 +66,13 @@ pnpm build   # writes dist/ (gitignored)
 
 Requires Node 22 (`.nvmrc`) and pnpm 11 (`packageManager` field).
 
-Release (CI only): `pnpm release:ci` via `.github/workflows/release.yml`.
-Local dry-run: `pnpm release`.
+Releases (on merge to `main`) bump `package.json` and `CHANGELOG.md`, commit
+`chore(release): vX.Y.Z [skip ci]`, tag, publish to npm via OIDC, and open a
+GitHub Release. The push to `main` uses the **singleton-release** GitHub App
+(ruleset bypass). See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+CI: `pnpm release:ci` via `.github/workflows/release.yml`. Local dry-run:
+`pnpm release`.
 
 ## Layout
 
